@@ -9,10 +9,16 @@ object mirca {
 		return tolerancia
 	}
 	method serAsustadoPor(chico){
+		if (tolerancia > chico.capacidadSusto)(){
+			self.caramelosAEntregar(chico)
+		}
 		tolerancia =- 1
 	}
 	method caramelosAEntregar(chico){
-		chico.recibirCaramelos(tolerancia - chico.capacidadSusto())
+		return tolerancia - chico.capacidadSusto()
+	}
+	method entregarCaramelos(caramelos,chico){
+		chico.recibirCaramelos(caramelos)
 	}
 
 }
