@@ -28,7 +28,7 @@ object mascaraDracula {
 object mascaraFrankenstein {
 	var tamanio = 22
 	method nivelSusto(){
-		return 2 * tamanio
+		return tamanio
 		
 	}
 	

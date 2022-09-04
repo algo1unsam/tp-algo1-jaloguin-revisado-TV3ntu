@@ -2,14 +2,14 @@ import elementos.*
 
 object macaria {
 	const nivelIra= 10
-	var property disfraces = [ ]
+	var property disfraces = []
 	var property caramelos = 0
 	
 	method capacidadSusto(){
 		return nivelIra + disfraces.fold(0,{acum, disfraz => acum + disfraz.nivelSusto()})
 	}
 	method recibirCaramelos(_caramelos){
-		caramelos += _caramelos - _caramelos.div(4)
+		caramelos += (_caramelos*3).div(4)
 	}
 	method disfrazar(disfraz){
 		disfraces.add(disfraz)
@@ -55,7 +55,7 @@ object pedro {
 		disfraces.add(_disfraz)
 	}
 	method recibirCaramelos(_caramelos){
-	caramelos += _caramelos
+		caramelos += _caramelos
 	}
 	method tirarTodosLosDisfraces(){
 		disfraces.clear()
