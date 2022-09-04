@@ -1,15 +1,15 @@
 import elementos.*
 
 object macaria {
-	var nivelIra= 10
-	var disfraces = [ ]
+	const nivelIra= 10
+	var property disfraces = [ ]
 	var property caramelos = 0
 	
 	method capacidadSusto(){
 		return nivelIra + disfraces.fold(0,{acum, disfraz => acum + disfraz.nivelSusto()})
 	}
 	method recibirCaramelos(_caramelos){
-		caramelos += _caramelos - _caramelos.div(1/4)
+		caramelos += _caramelos - _caramelos.div(4)
 	}
 	method disfrazar(disfraz){
 		disfraces.add(disfraz)
@@ -24,14 +24,15 @@ object macaria {
 
 object pancracio {
 	var cantidadDeU = 4
-	var property disfraces = mascaraDracula
+	var property disfraces = [mascaraDracula]
 	var property caramelos = 0
 	
 	method capacidadSusto(){
-		return cantidadDeU + disfraces.nivelSusto()
+		return cantidadDeU + disfraces.fold(0,{acum, disfraz => acum + disfraz.nivelSusto()})
 	}
 	method disfrazar(disfraz){
-		disfraces = disfraz
+		disfraces.clear()
+		disfraces.add(disfraz)
 	}
 	method recibirCaramelos(_caramelos){
 		caramelos += _caramelos
@@ -44,17 +45,20 @@ object pancracio {
 // El chico inventado .
 
 object pedro {
-	var property disfraces = mascaraDracula
+	var property disfraces = []
 	var property caramelos = 0
 	
 	method capacidadSusto(){
-		return 5
+		return 0 + disfraces.fold(0,{acum, disfraz => acum + disfraz.nivelSusto()})
 	}
 	method disfrazar(_disfraz){
-		disfraces = _disfraz
+		disfraces.add(_disfraz)
 	}
 	method recibirCaramelos(_caramelos){
 	caramelos += _caramelos
+	}
+	method tirarTodosLosDisfraces(){
+		disfraces.clear()
 	}
 }
 
