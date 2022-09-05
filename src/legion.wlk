@@ -37,11 +37,11 @@ object legionDelTerror {
 object barrio{
 	var integrantes = []
 	method chicosConMasCaramelos(cantidad) {
-		return integrantes .sortedBy({ x, y => x.caramelos() > y.caramelos()}).take(cantidad)
+		return integrantes.sortedBy({ x, y => x.caramelos() > y.caramelos()}).take(cantidad)
 	}
 	
-	method chicos(nuevosChicos) {
-		integrantes = nuevosChicos
+	method chicos(_integrantes) {
+		integrantes += _integrantes
 	}
 
 	method algunoMuyAsustador() {

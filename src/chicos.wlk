@@ -18,6 +18,9 @@ object macaria {
 		const menosEfectivo = disfraces.min({disfraz => disfraz.nivelSusto()})
 		disfraces.remove(menosEfectivo)
 	}
+	method quitarDisfraz(disfraz){
+		disfraces.remove(disfraz)
+	}
 
 
 }
@@ -59,6 +62,9 @@ object pedro {
 	}
 	method tirarTodosLosDisfraces(){
 		disfraces.clear()
+	}
+	method quitarDisfraz(disfraz){
+		disfraces.remove(disfraz)
 	}
 }
 

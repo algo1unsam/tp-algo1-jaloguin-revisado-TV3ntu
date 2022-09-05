@@ -36,7 +36,7 @@ object mascaraFrankenstein {
 }
 
 object mascaraPolitico {
-	var tamanio = 10
+	var tamanio = 1
 	method nivelSusto(){
 		return 2 * tamanio
 		
